@@ -1,0 +1,6 @@
+<h1>{{ movie.title }}</h1>
+<p><b>Genres:</b> {{ movie.genres }}</p>
+<p>{{ movie.description }}</p>
+
+<a href="/">Back</a>
+<a href="{% url 'rate_movie' movie.id %}">Оценить фильм</a>
