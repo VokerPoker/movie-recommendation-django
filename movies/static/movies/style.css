@@ -1,0 +1,163 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 30px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.movie-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* POSTER */
+.poster-wrapper {
+  width: 100%;
+  height: 270px;
+  background: #ddd;
+}
+
+.poster-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* если нет постера */
+.no-poster {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+}
+
+/* TEXT */
+.movie-info {
+  padding: 12px;
+  text-align: center;
+}
+
+.movie-info h3 {
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.3;
+}
+.rating {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  font-size: 36px;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  width: 18px;
+  height: 36px;
+  cursor: pointer;
+  position: relative;
+}
+
+.rating label::before {
+  content: "★";
+  position: absolute;
+  left: -18px;
+  color: #ccc;
+  width: 36px;
+}
+
+.rating label:hover::before,
+.rating label:hover ~ label::before,
+.rating input:checked ~ label::before {
+  color: gold;
+}
+.movie-detail {
+  display: flex;
+  gap: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.detail-poster {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.detail-info {
+  max-width: 500px;
+}
+.star-rating {
+  display: flex;
+  gap: 4px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.star {
+  position: relative;
+  color: #555;
+}
+
+.star.active {
+  color: #00e054;
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #00e054;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #888;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #00e054;
+}
+.movie-meta {
+  margin-top: 16px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.movie-meta strong {
+  color: #fff;
+}
